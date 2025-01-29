@@ -1,12 +1,12 @@
 const btn = document.querySelector(".btnEmj");
-const h2 = document.querySelector("h2");
+const h2 = document.querySelector(".emoji");
 const access_key = "f9c1590ceaa22bf3f58e5b16a4dc444bef47f081";
+const emojiDes = document.querySelector(".emojiDes");
 let result = [];
 
 async function ramdomEmoji() {
   h2.textContent = "Loading emojis...";
   btn.disabled = true;
-
   try {
     let response = await fetch(`https://emoji-api.com/emojis?access_key=${access_key}`);
     result = await response.json();
@@ -29,6 +29,10 @@ btn.addEventListener("click", () => {
   }
   let n = generateRandomNumber();
   h2.textContent = result[n]?.character || "No emoji available";
+  let des = result[n].unicodeName;
+  let part = des.slice(5,des.length);
+  emojiDes.textContent = part	|| "No Description available";
+  emojiDes.style.display = "block";
 });
 
 ramdomEmoji();
