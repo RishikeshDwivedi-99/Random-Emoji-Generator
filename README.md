@@ -22,8 +22,3 @@ You can view the live demo here: [https://your-username.github.io/random-emoji-a
 ### Prerequisites
 - A web browser (e.g., Chrome, Firefox).
 
-### Steps to Run
-1. Clone the repository:
-
-```bash
-git clone https://github.com/your-username/random-emoji-app.git
